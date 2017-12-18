@@ -7,5 +7,6 @@ package de.fhro.inf.prg3.a02;
 public class SimpleListImpl implements SimpleList {
 
 	// TODO: Implement the required methods.
+    //test
 
 }
