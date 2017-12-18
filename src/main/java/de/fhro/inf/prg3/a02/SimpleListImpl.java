@@ -6,7 +6,21 @@ package de.fhro.inf.prg3.a02;
  */
 public class SimpleListImpl implements SimpleList {
 
-	// TODO: Implement the required methods.
-    //test
+    //ATTRIBUTES
+
+    private Element head;
+    private int size;
+
+
+    //CONSTRUCTOR
+    //implements a SimpleListImpl, the head is null, so the list is empty
+    public SimpleListImpl() {
+        head = null;
+    }
+
+    public SimpleList filter(SimpleFilter filter) {
+
+    }
+
 
 }
