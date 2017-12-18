@@ -1,8 +1,6 @@
 package de.fhro.inf.prg3.a02;
 
 
-import org.w3c.dom.html.HTMLDListElement;
-
 import java.util.Iterator;
 
 /**
@@ -82,6 +80,10 @@ public class SimpleListImpl implements SimpleList, Iterable<Object> {
         return new SimpleIterator();
     }
 
+    /**
+     * Helper class which implements the Iterator<T> interface
+     * Has to be non static because otherwise is could not access the head of the list
+     */
     private class SimpleIterator implements Iterator<Object> {
 
         private ListElement current = head;
@@ -110,38 +112,38 @@ public class SimpleListImpl implements SimpleList, Iterable<Object> {
      * Helper class for the linked list
      * can be static because the ListElement does not need to access the SimpleList instance
      */
-    private static Class ListElement
+    private static class ListElement {
 
-    {
         private Object item;
         private ListElement next;
 
         ListElement(Object item) {
-        this.item = item;
-        this.next = null;
-    }
+            this.item = item;
+            this.next = null;
+        }
 
         /**
          * @return get object in the element
          */
-        public Object getItem () {
-        return item;
-    }
+        public Object getItem() {
+            return item;
+        }
 
         /**
          * @return successor of the ListElement - may be NULL
          */
-        public ListElement getNext () {
-        return next;
-    }
+        public ListElement getNext() {
+            return next;
+        }
 
         /**
          * Sets the successor of the ListElement
-         * @param next ListElement
          */
-        public void setNext () {
-        this.next = next;
-    }
+        public void setNext(ListElement next) {
+            this.next = next;
+        }
+
+
     }
 
 
